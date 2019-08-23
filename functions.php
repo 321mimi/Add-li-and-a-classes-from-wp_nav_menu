@@ -17,7 +17,8 @@ function register_my_menus() {
 }
 add_action('init', 'register_my_menus');
 
-/* Adds class to link automatically */
+/* Adds class to link automatically 
+Adapted from: https://stackoverflow.com/questions/26180688/how-to-add-class-to-link-in-wp-nav-menu */
 add_filter( 'nav_menu_link_attributes', function($atts, $item, $args) {
 	if (property_exists($args, 'link_class')) {
     	$atts['class'] = $args->link_class;
